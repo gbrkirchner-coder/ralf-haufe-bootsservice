@@ -273,16 +273,10 @@ label[hidden]{display:none}
 .addr{max-width:640px;margin:26px auto 0;text-align:left}
 .sos{height:auto}
 .sos::after{display:none}
-
-.offer summary{display:flex;justify-content:space-between;align-items:center;gap:20px;cursor:pointer;list-style:none}
-.offer summary::-webkit-details-marker{display:none}
-.offer summary::after{content:"+";font:300 26px var(--sans);color:var(--accent);margin-left:6px;transition:transform .3s}
-.offer[open] summary::after{transform:rotate(45deg)}
-.offer summary>div{flex:1}
-.plist{margin-top:24px;padding-top:20px;border-top:1px solid var(--line)}
-.plist table{width:100%;border-collapse:collapse;font-size:15px}
-.plist th{font:500 11px var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--accent2);text-align:left;padding:0 0 10px}
-.plist th:last-child,.plist td:last-child{text-align:right}
-.plist td{padding:11px 0;border-top:1px solid var(--line);color:var(--ink)}
-.plist td:last-child{font-family:var(--serif);font-size:20px;color:var(--accent)}
-.pnote{margin:14px 0 0;font-size:13px;color:var(--mut)}
+#impl{color:inherit;text-decoration:underline;text-underline-offset:3px}
+#imp{border:1px solid var(--line);background:var(--bg,#070d16);color:var(--ink);padding:40px clamp(24px,5vw,56px);max-width:min(560px,92vw);text-align:left}
+#imp::backdrop{background:rgba(3,6,10,.72)}
+#imp h2{font-size:34px;margin-bottom:6px}
+#imp p{margin:0 0 18px;line-height:1.7}
+#imp a{color:var(--accent)}
+#imp .x{position:absolute;top:14px;right:18px;background:none;border:0;color:var(--ink);font:300 30px var(--sans);cursor:pointer}
