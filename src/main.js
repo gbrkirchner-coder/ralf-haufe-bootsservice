@@ -17,6 +17,7 @@ function applyLang() {
   $$('[data-i18n]').forEach((e) => (e.textContent = d[e.dataset.i18n]));
   $$('[data-ph]').forEach((e) => (e.placeholder = d[e.dataset.ph]));
   $$('[data-alt]').forEach((e) => (e.alt = d[e.dataset.alt]));
+  $$('[data-al]').forEach((e) => e.setAttribute('aria-label', d[e.dataset.al]));
   $$('.lang button').forEach((b) => b.setAttribute('aria-pressed', b.dataset.lang === lang));
   buildDays();
   splitTitle();
@@ -151,3 +152,8 @@ applyLang();
   dlg.addEventListener('click', (e) => { if (e.target === dlg) dlg.close(); });
   if (location.hash === '#impressum') open();
 }
+
+$$('[data-ba]').forEach((f) => {
+  const r = $('input', f);
+  r.addEventListener('input', () => f.style.setProperty('--p', `${r.value}%`));
+});
