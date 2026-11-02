@@ -144,13 +144,13 @@ addEventListener('scroll', onScroll, { passive: true }); onScroll();
 $$('.card').forEach((c) => c.addEventListener('pointermove', (e) => { const r = c.getBoundingClientRect(); c.style.setProperty('--mx', `${e.clientX - r.left}px`); c.style.setProperty('--my', `${e.clientY - r.top}px`); }));
 applyLang();
 
-{
-  const dlg = $('#imp');
+for (const [id, link, hash] of [['#imp', '#impl', '#impressum'], ['#dsg', '#dsgl', '#datenschutz']]) {
+  const dlg = $(id);
   const open = () => { if (!dlg.open) dlg.showModal(); };
-  $('#impl').addEventListener('click', (e) => { e.preventDefault(); open(); history.replaceState(null, '', '#impressum'); });
-  dlg.addEventListener('close', () => { if (location.hash === '#impressum') history.replaceState(null, '', location.pathname); });
+  $(link).addEventListener('click', (e) => { e.preventDefault(); open(); history.replaceState(null, '', hash); });
+  dlg.addEventListener('close', () => { if (location.hash === hash) history.replaceState(null, '', location.pathname); });
   dlg.addEventListener('click', (e) => { if (e.target === dlg) dlg.close(); });
-  if (location.hash === '#impressum') open();
+  if (location.hash === hash) open();
 }
 
 $$('[data-ba]').forEach((f) => {
